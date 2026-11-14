@@ -1,0 +1,145 @@
+/* Mismos valores que registro.component.css */
+
+.form-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #080808;
+  border-radius: 8px;
+  background-color: rgba(182, 180, 180, 0.92);
+}
+
+/* Igual que el "form" del registro */
+.panel {
+  background-color: rgba(182, 180, 180, 0.92);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+section {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.nested-group {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px dashed #aaa;
+  border-radius: 4px;
+  min-width: 0; /* permite que la tabla haga scroll dentro del fieldset en celular */
+}
+
+button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* ---- Tarjetas ---- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(182, 180, 180, 0.92);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card label {
+  margin-bottom: 2px;
+}
+
+.card-icono {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.card-valor {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* ---- Buscador ---- */
+.buscador-fila {
+  display: flex;
+  gap: 10px;
+}
+
+.buscador-fila button {
+  margin-right: 0;
+  white-space: nowrap;
+}
+
+/* ---- Tabla ---- */
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px dashed #aaa;
+}
+
+th {
+  font-weight: bold;
+  border-bottom: 1px solid #080808;
+}
+
+td button {
+  margin-right: 0;
+  padding: 4px 12px;
+}
+
+.vacio {
+  text-align: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container,
+  .panel {
+    padding: 15px;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,43 @@
+form {
+  background-color: rgba(182, 180, 180, 0.92); /* Blanco casi opaco, deja ver apenas el fondo */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.form-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #080808;
+  border-radius: 8px;
+  background-color: rgba(182, 180, 180, 0.92); 
+}
+
+section {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.nested-group {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px dashed #aaa;
+  border-radius: 4px;
+}
+
+button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}

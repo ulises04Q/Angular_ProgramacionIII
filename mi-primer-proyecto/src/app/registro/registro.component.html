@@ -1,0 +1,45 @@
+<div class="form-container">
+  <h1>Crear Perfil</h1>
+  
+ 
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <section>
+      <h1>Perfil</h1>
+      <p>Ingrese sus datos para cargarlo al sistema de descuentos</p>
+    </section>
+
+    <section>    
+      <label for="txtnombre">Nombre</label>   
+      <!-- Vinculación con formControlName -->
+      <input type="text" id="txtnombre" formControlName="nombre" placeholder="Ingrese su nombre">
+    </section>
+    <section>    
+      <label for="txtapellido">Apellido</label>   
+      <!-- Vinculación con formControlName -->
+      <input type="text" id="txtapellido" formControlName="apellido" placeholder="Ingrese su apellido">
+    </section>
+
+    <section>
+       <label for="txtcorreo">Correo electrónico</label>
+       <input type="email" id="txtcorreo" formControlName="email" placeholder="Ingrese su correo">
+    </section>
+
+    <!-- Grupo Anidado de Dirección -->
+    <fieldset formGroupName="direccion" class="nested-group">
+      <legend>Sucursal elegida</legend>
+      <section>
+        <label for="calle">Calle</label>
+        <input type="text" id="calle" formControlName="calle" placeholder="Ingrese la calle">
+      </section>
+      <section>
+        <label for="ciudad">Ciudad</label>
+        <input type="text" id="ciudad" formControlName="ciudad" placeholder="Ingrese la ciudad">
+      </section>
+    </fieldset>
+
+    <section>
+      <button type="reset">Cancelar</button>
+      <button type="submit">Enviar</button>
+    </section>
+  </form>
+</div>

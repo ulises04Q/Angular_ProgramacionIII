@@ -1,0 +1,72 @@
+<div class="form-container">
+  <h1>Dashboard</h1>
+  <p>Resumen de los perfiles cargados en el sistema de descuentos</p>
+
+  <!-- Tarjetas de resumen -->
+  <div class="cards">
+    @for (card of resumen; track card.titulo) {
+      <div class="card">
+        <span class="card-icono">{{ card.icono }}</span>
+        <div>
+          <label>{{ card.titulo }}</label>
+          <span class="card-valor">{{ card.valor }}</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Tabla -->
+  <div class="panel">
+    <section>
+      <h1>Perfiles</h1>
+    </section>
+
+    <section class="buscador">
+      <label for="txtbuscar">Buscar</label>
+      <div class="buscador-fila">
+        <input #txtBuscar type="text" id="txtbuscar"
+               placeholder="Nombre, correo, sucursal o estado"
+               (input)="onBuscar($event)">
+        <button type="button" (click)="limpiar(txtBuscar)">Limpiar</button>
+      </div>
+    </section>
+
+    <fieldset class="nested-group">
+      <legend>Listado</legend>
+      <div class="tabla-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Correo electrónico</th>
+              <th>Sucursal</th>
+              <th>Estado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (r of registrosFiltrados(); track r.id) {
+              <tr>
+                <td>{{ r.id }}</td>
+                <td>{{ r.nombre }} {{ r.apellido }}</td>
+                <td>{{ r.email }}</td>
+                <td>{{ r.sucursal }}</td>
+                <td>{{ r.estado }}</td>
+                <td><button type="button" (click)="ver(r)">Ver</button></td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="6" class="vacio">No hay resultados</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+
+    <section>
+      <button type="button" routerLink="/">Volver al formulario</button>
+    </section>
+  </div>
+</div>
